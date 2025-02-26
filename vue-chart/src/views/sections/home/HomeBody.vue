@@ -28,12 +28,15 @@
         </div>
       </div>
     </template>
+    <option-selector :width="getElementWidth" v-if="selectedImage"/>
   </div>
   
 </template>
 
 <script setup lang="js">
 import { ref, computed } from 'vue'
+import OptionSelector from '@/views/sections/home/components/OptionSelector.vue';
+
 const imageInput = ref(null)
 const selectedImage = ref(null);
 const imagePreview = ref('');

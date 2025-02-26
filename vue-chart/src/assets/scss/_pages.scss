@@ -7,7 +7,7 @@
 
     margin: 0.5vh 0.5vw;
     padding: 0.5vh 0.5vw;
-    height: calc(100vh - 2vh);
+    min-height: calc(100vh - 2vh);
 
     background-color: $text-third-color;
     border-radius: 1%;
