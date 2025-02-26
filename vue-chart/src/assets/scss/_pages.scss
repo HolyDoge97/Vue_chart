@@ -1,0 +1,16 @@
+@use "_variables.scss" as *;
+
+.page {
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    margin: 0.5vh 0.5vw;
+    padding: 0.5vh 0.5vw;
+    height: calc(100vh - 2vh);
+
+    background-color: $text-third-color;
+    border-radius: 1%;
+    filter: drop-shadow(2px 4px 6px #494949);
+  }
+}

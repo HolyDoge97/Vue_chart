@@ -1,0 +1,58 @@
+@use "_fonts.scss";
+@use "_pages.scss";
+@use "_layouts.scss";
+@use "_sections.scss";
+@use "_variables.scss" as *;
+
+
+* {
+  font-family: GowunDodum-Regular;
+  &.no-show {
+    display: none;
+  }
+  &.flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &.flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button {
+  &__basic {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: $text-primary-color;
+    filter: drop-shadow(2px 4px 3px #d2d2d2);
+    span {
+      font-size: 1.3em;
+    }
+    &.h50 {
+      height: 50px;
+    }
+    &.full-width {
+      width: 100%;
+    }
+    &:hover {
+      background-color: $text-secondary-color;
+      color: #fff;
+    }
+  }
+}

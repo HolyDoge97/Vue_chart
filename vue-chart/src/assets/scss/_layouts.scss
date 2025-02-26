@@ -1,0 +1,12 @@
+@use "_variables.scss" as *;
+
+.layout {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    &--col {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use "_variables.scss" as *;
+
+.section {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      color: $theme-primary-color;
+    }
+    h4 {
+      color: $theme-secondary-color;
+    }
+  }
+  &__body {
+    gap: 1vh;
+    color: $theme-third-color;
+    max-width: calc(100vw - 60vw);
+  }
+}
+
+.image {
+  &__container {
+    align-self: center;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  &__viewer {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  &__desc {
+    &-container {
+      width: 100%;
+      border-radius: 5px;
+      justify-content: space-between;
+      p {
+        margin: 0.5vh 0vw;
+        font-size: 1em;
+        font-weight: 800;
+        filter: drop-shadow(0px 0px 1px #d2d2d2);
+      }
+    }
+  }
+}
