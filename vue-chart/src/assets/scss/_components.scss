@@ -1,6 +1,29 @@
 @use "_variables.scss" as *;
 
 .input {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+  }
+
+  &-label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6b6b6b;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  &-label {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
   &__text {
     background: linear-gradient(0.25turn, #fff, #fff, #d5f0e3);
     color: $theme-third-color;
