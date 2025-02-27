@@ -11,7 +11,9 @@
       @change="handleImageUpload" 
     />
     <button class="button__basic h50 full-width" @click="uploadImage">
-      <span>이미지 업로드</span>
+      <span v-if="selectedImage">이미지 변경</span>
+      <span v-else>이미지 업로드</span>
+      
     </button>
 
     <template v-if="selectedImage">
