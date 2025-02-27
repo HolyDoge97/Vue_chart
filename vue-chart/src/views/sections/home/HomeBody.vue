@@ -28,7 +28,7 @@
         </div>
       </div>
     </template>
-    <option-selector :width="getElementWidth" v-if="selectedImage"/>
+    <option-selector v-if="selectedImage"/>
   </div>
   
 </template>
