@@ -13,7 +13,6 @@
     <button class="button__basic h50 full-width" @click="uploadImage">
       <span v-if="selectedImage">이미지 변경</span>
       <span v-else>이미지 업로드</span>
-      
     </button>
 
     <template v-if="selectedImage">
@@ -30,15 +29,20 @@
         </div>
       </div>
     </template>
-    <option-selector v-if="selectedImage"/>
+    <template v-if="selectedImage">
+      <option-selector ref="optionSelectorRef" />
+      <button class="button__basic h50 full-width" @click="startUpscale">
+        <span>업스케일 시작</span>
+      </button>
+    </template>
   </div>
-  
 </template>
 
 <script setup lang="js">
 import { ref, computed } from 'vue'
 import OptionSelector from '@/views/sections/home/components/OptionSelector.vue';
 
+const optionSelectorRef = ref(null)
 const imageInput = ref(null)
 const selectedImage = ref(null);
 const imagePreview = ref('');
@@ -84,7 +88,19 @@ const handleImageUpload = (event) => {
     imagePreview.value = e.target.result;
   };
   reader.readAsDataURL(file);
+  setTimeout(() => {
+    scrollDown()
+  }, 500)
 };
+
+const startUpscale = () => {
+  const params = optionSelectorRef.value.getParams()
+  console.log(params)
+}
+
+const scrollDown = () => {
+  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+}
 </script>
 
 <style>

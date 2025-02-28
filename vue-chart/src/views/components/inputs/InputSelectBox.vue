@@ -24,19 +24,17 @@
       :value="modelValue"
       @change="$emit('update:modelValue', $event.target.value)"
     >
-      <!-- <option
-        :value="placeholder"
-        disabled
+      <option
+        value=""
         selected
+        disabled
       >
         {{ placeholder }}
-      </option> -->
+      </option>
       <option 
-        v-for="data, index in getDataList" 
+        v-for="data in datas" 
         :key="data.value"
         :value="data.value"
-        :disabled="index === 0"
-        :selected="index === 0"
       >
         {{ data.label }}
       </option>
@@ -52,7 +50,5 @@ const emits = defineEmits(['update:modelValue'])
 const getPlaceHolder  = computed(() => {
   return { label: props.placeholder, value: undefined }
 })
-const getDataList = computed(() => {
-  return [getPlaceHolder.value, ...props.datas]
-})
+
 </script>

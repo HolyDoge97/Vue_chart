@@ -21,7 +21,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
+const emits = defineEmits(['update:modelValue'])
 
 const props = defineProps({
   min: {
@@ -35,8 +36,16 @@ const props = defineProps({
   interval: {
     type: Number,
     default: 1
+  },
+  modelValue: {
+    type: Number,
+    default: ''
   }
 });
+
+onMounted(() => {
+  rangePercent.value = props.modelValue
+})
 
 const rangePercent = ref(0);
 
@@ -55,6 +64,10 @@ const h4Style = computed(() => ({
 
 const currnetPercent = computed(() => {
   return ((rangePercent.value - props.min) / (props.max - props.min)) * 100
+})
+
+watch(() => rangePercent.value, (value) => {
+  emits('update:modelValue', value)
 })
 </script>
 
