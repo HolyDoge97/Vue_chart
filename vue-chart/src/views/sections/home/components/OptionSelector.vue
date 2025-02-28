@@ -34,7 +34,7 @@
       </div>
       <!-- 확장자 -->
       <div class="input-wrapper half">
-        <label class="input-label">확장자</label>
+        <label class="input-label">출력 확장자</label>
         <input-select-box
           :datas="exportExtList"
           v-model="selectedExt"
@@ -129,14 +129,14 @@ import ToggleSwitch from '@/views/components/inputs/ToggleSwitch.vue'
 import { computed, ref, defineExpose } from 'vue'
 
 const modelList = ref([
-  { label: "Bicubic", value: "BICU" },
-  { label: "Srcnn", value: "SRCN" },
-  { label: "Edsr", value: "EDSR" }
+  { label: "Bicubic", value: "bicubic" },
+  { label: "Srcnn", value: "srcnn" },
+  { label: "Edsr", value: "edsr" }
 ])
 
 const ratioList = ref( [
-  { label: "X2배", value: "X2" },
-  { label: "X4배", value: "X4" }
+  { label: "X2배", value: 2 },
+  { label: "X4배", value: 4 }
 ])
 
 const exportExtList = ref([
