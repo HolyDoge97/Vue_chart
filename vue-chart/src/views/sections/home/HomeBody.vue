@@ -1,5 +1,6 @@
 <template>
   <div class="section__body flex-col">
+    <Nexus />
     <span>
       이미지를 업로드 후 옵션을 선택해주세요
     </span>
@@ -68,6 +69,7 @@ import { ref, computed, onMounted } from 'vue'
 import { ImageApi } from '@/apis'
 import OptionSelector from '@/views/sections/home/components/OptionSelector.vue';
 import CommonModal from '@/views/modals/common/CommonModal.vue'
+import Nexus from '@/views/sections/nexus/Nexus.vue';
 
 const DEFAULT_MODAL_DATA = { title: '', content: '', size: 'small', origin: '' }
 
